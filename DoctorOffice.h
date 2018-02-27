@@ -1,3 +1,7 @@
+//**************************************************************************
+//NOT TESTED YET, PROGRAM DESIGNED FOR A WEEK, FIGURING OUT FOR MONTHS ATM
+//**************************************************************************
+
 #include <iostream>
 #include <string>
 #include <ctime>
