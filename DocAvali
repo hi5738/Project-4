@@ -1,0 +1,43 @@
+#include <iostream>
+
+
+int main()
+{
+    
+    DoctorOffice do; // Object creation will call the constructor
+    int date,month,year;
+    string time;
+    
+    cout << "The available time of doctor are:\n";
+    do.showAvailTimes(); // This will print all available time
+    
+    cout << "Enter the date you wish to meet the doctor\nYear:";
+    cin >> year;
+    cout << "\nMonth:";
+    cin >> month;
+    cout << "Date:";
+    cin  >> date;
+    cout << "\nEnter the time you wish to visit the doctor in hr:";
+    cin >> time;
+    
+    bool docOpen = do.open(year,month,date); 
+    //docOpen will contain true if it is a week day and false for a weekend
+    
+    if(docOpen) // date entered is weekday
+    {
+        for(int i=0;i<9;i++)
+        {
+            if(do.openHours[i]==time)
+            {
+                cout << "Doctor is available at your convienent time\n";
+                return 0;
+            }
+        }
+        cout << "Doctor isn't available at your convienent time\n";
+    }
+    else
+    {
+        cout << "Doctor isn't available on weekends\n";
+    }
+    return 0;
+}
